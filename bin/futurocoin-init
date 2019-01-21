@@ -1,0 +1,21 @@
+#!/bin/bash
+
+set -ex
+
+if [ ! -e "/home/futuro/node/futurocoin.conf" ]; then
+    cat <<EOF > /home/futuro/node/futurocoin.conf
+testnet=${TESTNET:-0}
+port=${PORT:-19000}
+rpcuser=${RPCUSER:-futurocoinrpc}
+rpcpassword=${RPCPASSWORD:-`dd if=/dev/urandom bs=33 count=1 2>/dev/null | base64`}
+rpcport=${RPCPORT:-19008}
+rpcbind=${RPCBIND:-0.0.0.0}
+rpcallowip=${RPCALLOWIP:-::/0}
+disablewallet=${DISABLEWALLET:-1}
+printtoconsole=${PRINTTOCONSOLE:-1}
+EOF
+fi
+
+cat /home/futuro/node/futurocoin.conf
+
+echo "Initialization completed successfully"

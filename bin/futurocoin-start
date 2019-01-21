@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -ex
+
+futurocoin-init
+
+exec futurocoind -conf=/home/futuro/node/futurocoin.conf -datadir=/home/futuro/node -reindex

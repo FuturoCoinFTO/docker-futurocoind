@@ -1,0 +1,3 @@
+#!/bin/bash
+
+futurocoin-cli -conf=/home/futuro/node/futurocoin.conf -datadir=/home/futuro/node $@
